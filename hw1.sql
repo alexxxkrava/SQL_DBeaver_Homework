@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS Songs (
 	id SERIAL PRIMARY KEY,
 	album_id INT NOT NULL REFERENCES Albums(id),
 	name VARCHAR(60),
-	duration TIME
+	duration INT
 	);
 
 CREATE TABLE IF NOT EXISTS Collections (
@@ -44,4 +44,3 @@ CREATE TABLE IF NOT EXISTS Collection_Song (
 	Song_id INT REFERENCES Songs(id),
 	CONSTRAINT pk3 PRIMARY KEY(Collection_id, Song_id)
 	);
-
